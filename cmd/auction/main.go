@@ -4,7 +4,7 @@ import (
 	"context"
 	"log"
 
-	"github.com/chasinfo/leilao/tree/configuration/mongodb"
+	"github.com/chasinfo/leilao/configuration/mongodb"
 	"github.com/joho/godotenv"
 )
 

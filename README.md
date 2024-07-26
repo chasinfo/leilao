@@ -25,5 +25,11 @@ $ go get go.mongodb.org/mongo-driver/mongo
 
 Subir o container:
 ```bash
-$ docker container run -d -p 27017:27017 --name actionsDB mongo
+$ docker container run -d -p 27017:27017 --name auctionsDB mongo
 ```
+
+### inicializa o workspace
+```bash
+$ go work use .
+```
+Obs. Utilizei este comando porque ao executar o go run cmd/auction/main.go, apresentava erros de dependencias. Mesmo executando go mod tidy.

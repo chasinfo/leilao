@@ -4,7 +4,7 @@ import (
 	"context"
 	"os"
 
-	"github.com/chasinfo/leilao/tree/configuration/logger"
+	"github.com/chasinfo/leilao/configuration/logger"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
@@ -15,7 +15,7 @@ const (
 )
 
 func NewMongoDBConnection(ctx context.Context) (*mongo.Database, error) {
-	mongoURL := os.Getenv(MONGODB_DB)
+	mongoURL := os.Getenv(MONGODB_URL)
 	mongoDatabase := os.Getenv(MONGODB_DB)
 
 	client, err := mongo.Connect(ctx, options.Client().ApplyURI(mongoURL))
