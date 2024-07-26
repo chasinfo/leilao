@@ -2,9 +2,9 @@ package main
 
 import (
 	"context"
-	"estudo/23-leilao/configuration/mongodb"
 	"log"
 
+	"github.com/chasinfo/leilao/configuration/mongodb"
 	"github.com/joho/godotenv"
 )
 
