@@ -4,7 +4,7 @@ import (
 	"context"
 	"os"
 
-	"github.com/chasinfo/leilao/tree/main/configuration/logger"
+	"github.com/chasinfo/leilao/tree/configuration/logger"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 )

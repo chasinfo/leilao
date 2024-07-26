@@ -1,4 +1,4 @@
-module github.com/chasinfo/leilao
+module github.com/chasinfo/leilao/tree
 
 go 1.21.5
 
