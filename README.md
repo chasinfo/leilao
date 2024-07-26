@@ -1,3 +1,6 @@
+### Requisitos:
+* Docker
+  
 ### Utilização da biblioteca GoDotEnv para carregar todas as variáveis de ambiente de um arquivo .env
 Endereço sobre a biblioteca [GoDotEnv](https://github.com/joho/godotenv)
 
