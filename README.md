@@ -10,7 +10,7 @@ $ go get github.com/joho/godotenv
 ```
 
 ### Utilização de uma biblioteca para geração de Logger
-Endereço sobre a biblioteca [zap](https://pkg.go.dev/go.uber.org/zap#section-readme)
+documentação [zap](https://pkg.go.dev/go.uber.org/zap#section-readme)
 
 Instalação:
 ```bash

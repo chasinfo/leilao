@@ -13,8 +13,10 @@ var (
 // todas as vezes que a aplicação iniciar, vai adicionar informações na variável de logger.
 func init() {
 	logConfiguration := zap.Config{
-		Level:    zap.NewAtomicLevelAt(zap.InfoLevel),
-		Encoding: "json",
+		Level:            zap.NewAtomicLevelAt(zap.InfoLevel),
+		Encoding:         "json",
+		OutputPaths:      []string{"tmp/auction.log", "stdout"},
+		ErrorOutputPaths: []string{"tmp/auction-errors.log", "stderr"},
 		EncoderConfig: zapcore.EncoderConfig{
 			MessageKey:   "message",
 			LevelKey:     "level",
