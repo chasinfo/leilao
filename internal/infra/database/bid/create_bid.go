@@ -63,4 +63,6 @@ func (bd *BidRepository) CreateBid(ctx context.Context, bidEntities []bid_entity
 	}
 
 	wg.Wait()
+
+	return nil
 }

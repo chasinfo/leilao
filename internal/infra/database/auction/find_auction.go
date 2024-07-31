@@ -52,7 +52,8 @@ func (ar *AuctionRepository) FindAuctionById(ctx context.Context, auctionId stri
 func (ar *AuctionRepository) FindAuctions(
 	ctx context.Context,
 	status auction_entity.AuctionStatus,
-	category, productName string) ([]auction_entity.Auction, *internal_error.InternalError) {
+	category string,
+	productName string) ([]auction_entity.Auction, *internal_error.InternalError) {
 
 	filter := bson.M{}
 

@@ -23,6 +23,15 @@ Instalação:
 ```bash
 $ go get go.mongodb.org/mongo-driver/mongo
 ```
+### pacote que gera e inspeciona UUIDs baseado no RFC 4122
+Documentação [uuid](https://pkg.go.dev/github.com/google/uuid)
+
+Instalação:
+```bash
+$ go get github.com/google/uuid
+```
+
+
 
 ### iniciar um container Docker da imagem do banco de dados MongoDB com o nome de actionsDB
 
