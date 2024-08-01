@@ -34,7 +34,7 @@ func (bu *BidUseCase) FindWinningBidByAuctionId(ctx context.Context, auctionId s
 	bidEntity, err := bu.FindWinningBidByAuctionId(ctx, auctionId)
 
 	if err != nil {
-		return nil err
+		return nil, err
 	}
 
 	return &BidOutputDTO{
