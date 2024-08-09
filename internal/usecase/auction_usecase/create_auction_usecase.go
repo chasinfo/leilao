@@ -4,11 +4,13 @@ import (
 	"context"
 
 	"github.com/chasinfo/leilao/internal/entity/auction_entity"
+	"github.com/chasinfo/leilao/internal/entity/bid_entity"
 	"github.com/chasinfo/leilao/internal/internal_error"
 )
 
 type AuctionUseCase struct {
 	auctionRepository auction_entity.AuctionRepositoryInterface
+	bidRepository     bid_entity.BidRepositoryInterface
 }
 
 func (au *AuctionUseCase) CreateAuction(ctx context.Context, auctionInput AuctionInputDTO) *internal_error.InternalError {

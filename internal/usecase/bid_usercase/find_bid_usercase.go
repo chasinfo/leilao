@@ -8,7 +8,7 @@ import (
 
 func (bu *BidUseCase) FindBidByAuctionId(ctx context.Context, auctionId string) ([]BidOutputDTO, *internal_error.InternalError) {
 
-	bidEntities, err := bu.bidRepository.FindBidByAuctionId(ctx, auctionId)
+	bidEntities, err := bu.BidRepository.FindBidByAuctionId(ctx, auctionId)
 
 	if err != nil {
 		return nil, err
@@ -31,7 +31,7 @@ func (bu *BidUseCase) FindBidByAuctionId(ctx context.Context, auctionId string) 
 
 func (bu *BidUseCase) FindWinningBidByAuctionId(ctx context.Context, auctionId string) (*BidOutputDTO, *internal_error.InternalError) {
 
-	bidEntity, err := bu.bidRepository.FindWinningBidByAuctionId(ctx, auctionId)
+	bidEntity, err := bu.BidRepository.FindWinningBidByAuctionId(ctx, auctionId)
 
 	if err != nil {
 		return nil, err

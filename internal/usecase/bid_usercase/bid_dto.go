@@ -2,6 +2,12 @@ package bid_usercase
 
 import "time"
 
+type BidInputDTO struct {
+	UserId    string  `json:"user_id"`
+	AuctionId string  `json:"auction_id"`
+	Amount    float64 `json:"amount"`
+}
+
 type BidOutputDTO struct {
 	Id        string    `json:"id"`
 	UserId    string    `json:"user_id"`

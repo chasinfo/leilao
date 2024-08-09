@@ -5,6 +5,7 @@ import (
 
 	"github.com/chasinfo/leilao/internal/entity/auction_entity"
 	"github.com/chasinfo/leilao/internal/internal_error"
+	"github.com/chasinfo/leilao/internal/usecase/bid_usercase"
 )
 
 func (au *AuctionUseCase) FindAuctionById(ctx context.Context, auctionId string) (*AuctionOutputDTO, *internal_error.InternalError) {
@@ -49,4 +50,44 @@ func (au *AuctionUseCase) FindAuctions(ctx context.Context, status AuctionStatus
 	}
 
 	return auctionOutputs, nil
+}
+
+func (au *AuctionUseCase) FindWinningBidByAuctionId(ctx context.Context, auctionId string) (*WinningInfoOutputDTO, *internal_error.InternalError) {
+	auction, err := au.auctionRepository.FindAuctionById(ctx, auctionId)
+
+	if err != nil {
+		return nil, err
+	}
+
+	auctionOutputDTO := AuctionOutputDTO{
+		Id:          auction.Id,
+		ProductName: auction.ProductName,
+		Category:    auction.Category,
+		Description: auction.Description,
+		Condition:   ProductionCondition(auction.Condition),
+		Status:      AuctionStatus(auction.Status),
+		Timestamp:   auction.Timestamp,
+	}
+
+	bidWinning, err := au.bidRepository.FindWinningBidByAuctionId(ctx, auction.Id)
+
+	if err != nil {
+		return &WinningInfoOutputDTO{
+			Auction: auctionOutputDTO,
+			Bid:     nil,
+		}, nil
+	}
+
+	BidOutputDTO := &bid_usercase.BidOutputDTO{
+		Id:        bidWinning.Id,
+		UserId:    bidWinning.UserId,
+		AuctionId: bidWinning.AuctionId,
+		Amount:    bidWinning.Amount,
+		Timestamp: bidWinning.Timestamp,
+	}
+
+	return &WinningInfoOutputDTO{
+		Auction: auctionOutputDTO,
+		Bid:     BidOutputDTO,
+	}, nil
 }
